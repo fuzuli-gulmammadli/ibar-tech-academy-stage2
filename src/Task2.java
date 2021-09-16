@@ -44,6 +44,7 @@ public class Task2 {
         int cols = map[0].length;
         Map<Integer, List<Integer[]>> colors = new HashMap<>();
 
+        //koordinantlari renglere gore qruplasdirmaq
         for(int row=0; row<rows; row++) {
             for (int col = 0; col < cols; col++) {
                 int color = map[row][col];
@@ -58,6 +59,7 @@ public class Task2 {
             }
         }
 
+        //qruplasdirilmis renglerden ayri ayri olkeleri rekursiya ile mueyyen etmek
         List<List<Integer[]>> countries = new ArrayList<>();
         for (Map.Entry<Integer, List<Integer[]>> entry : colors.entrySet()) {
             List<Integer[]> colorLocs = entry.getValue();
