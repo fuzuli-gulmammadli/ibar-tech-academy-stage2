@@ -63,9 +63,7 @@ public class Task2 {
             List<Integer[]> colorLocs = entry.getValue();
             for(Integer[] colorLoc : colorLocs) {
                 List<Integer[]> newCountryCandidate = findCountries(colorLoc, colorLocs, new ArrayList<>());
-                if(!countries.stream().anyMatch(country-> {
-                    return country.size() == newCountryCandidate.size() && country.stream().allMatch(loc -> newCountryCandidate.stream().anyMatch(newLoc -> newLoc[0] == loc[0] && newLoc[1] == loc[1]));
-                })){
+                if(!countries.stream().anyMatch(country-> country.size() == newCountryCandidate.size() && country.stream().allMatch(loc -> newCountryCandidate.stream().anyMatch(newLoc -> newLoc[0] == loc[0] && newLoc[1] == loc[1])))){
                     countries.add(newCountryCandidate);
                 }
             }
